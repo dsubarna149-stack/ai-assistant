@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raj - Pro AI Assistant</title>
+    <title>Secret Chat Room</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 </head>
 <body>
     <div class="container">
-        <div class="assistant-circle" id="mic-btn" title="ভয়েস কমান্ড চালু করতে ক্লিক করুন">
-            <div class="pulse-ring"></div>
-            <i class="fas fa-microphone"></i>
-        </div>
-        <h1 class="title">Raj AI</h1>
-        <p class="status" id="status">মাইক আইকনে ক্লিক করুন অথবা নিচে টাইপ করুন...</p>
-        
-        <div class="chat-box" id="chat-box">
-            <div class="message user-message" id="user-text">আপনার প্রশ্ন...</div>
-            <div class="message ai-message" id="ai-text">Raj এর উত্তর...</div>
+        <div id="login-section" class="screen active">
+            <h2>সিক্রেট চ্যাট রুম</h2>
+            <p>কানেক্ট হতে ৪-সংখ্যার পিন দিন</p>
+            <input type="number" id="room-pin" placeholder="৪-সংখ্যার পিন (যেমন: ১২৩৪)" maxlength="4">
+            <input type="text" id="user-name" placeholder="আপনার নাম লিখুন">
+            <button id="join-btn">জয়েন করুন</button>
+            <p id="error-msg" style="color: #ef4444; margin-top: 10px; display: none;"></p>
         </div>
 
-        <div class="input-area">
-            <input type="text" id="text-input" placeholder="Raj-কে কিছু লিখুন..." autocomplete="off">
-            <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+        <div id="chat-section" class="screen">
+            <div class="chat-header">
+                <h3>রুম পিন: <span id="display-pin"></span></h3>
+                <button id="leave-btn">বেরিয়ে যান</button>
+            </div>
+            
+            <div class="chat-box" id="chat-box">
+                </div>
+
+            <div class="input-area">
+                <input type="text" id="message-input" placeholder="মেসেজ টাইপ করুন..." autocomplete="off">
+                <button id="send-btn">Send</button>
+            </div>
         </div>
     </div>
 
