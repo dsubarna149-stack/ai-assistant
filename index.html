@@ -9,16 +9,21 @@
 </head>
 <body>
     <div class="container">
-        <div class="assistant-circle" id="mic-btn">
+        <div class="assistant-circle" id="mic-btn" title="ভয়েস কমান্ড চালু করতে ক্লিক করুন">
             <div class="pulse-ring"></div>
             <i class="fas fa-microphone"></i>
         </div>
         <h1 class="title">Raj AI</h1>
-        <p class="status" id="status">সিস্টেম চালু করতে মাইকে ক্লিক করুন...</p>
+        <p class="status" id="status">মাইক আইকনে ক্লিক করুন অথবা নিচে টাইপ করুন...</p>
         
-        <div class="chat-box">
-            <div class="message user-message" id="user-text">আপনার কথা এখানে দেখাবে...</div>
-            <div class="message ai-message" id="ai-text">Raj এর উত্তর এখানে দেখাবে...</div>
+        <div class="chat-box" id="chat-box">
+            <div class="message user-message" id="user-text">আপনার প্রশ্ন...</div>
+            <div class="message ai-message" id="ai-text">Raj এর উত্তর...</div>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="text-input" placeholder="Raj-কে কিছু লিখুন..." autocomplete="off">
+            <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
 
